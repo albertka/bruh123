@@ -6,40 +6,38 @@ import sys
 def main():
     
     choose = input("Welcome to rock paper scissors. Choose rock,paper or scissors(r/p/s): ")
+    
+    
+    
+    randomchoose = ai_guess(choose)
+    checkWin(choose, randomchoose)
 
 
-def ai_guess():
-    if choose == "p":
-        choose = 1
-    elif choose == "s":
-    choose = 2 
+def ai_guess(choose):
     
-    if (Choose==p):
-        r=0
-    elif (Choose==s):
-        r=3
-    else:
-        r=0
-        
-    
-    randomChoose = random.randint(0,2)
-    if (randomChoose == 0):
-        randomChoose = str(r)
-        
-    elif (randomChoose == 1):
-        randomChoose = str(p)
-    
-    else:
-        randomChoose =str(s)
+    options = ['r','p','s']
+    randomChoose = random.choice(options)
+    return randomChoose
     
     
-def checkWin(randomChoose, Choose):
-    if (randomChoose == Choose):
-        print ("Players have tied. ")
-    elif (randomeChoose < Choose):
-        print ("You Won!!")
-    else:
-        print ("You Lost")
+    
+def checkWin(choose, randomChoose):
+    
+    if (choose==randomChoose):
+        print ("Players have tied. ")               
+    elif choose == "r" and randomChoose == 'p':
+        print ("You LOSE.")
+    elif choose == "p" and randomChoose == 'r':
+        print ("You Won!")
+    elif choose == "r" and randomChoose == 's':
+        print ("You Won!")
+    elif choose == "s" and  randomChoose == 'r':
+        print ("You LOSE.") 
+    elif choose == "p" and randomChoose == 's':
+        print ("You LOSE.")
+    elif choose == "s" and randomChoose == 'p':
+        print ("You Won!")
+    
     
     
 if __name__ == "__main__":
